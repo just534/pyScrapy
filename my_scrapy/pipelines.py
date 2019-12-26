@@ -8,4 +8,5 @@
 
 class MyScrapyPipeline(object):
     def process_item(self, item, spider):
+        print("!"*50)
         return item
