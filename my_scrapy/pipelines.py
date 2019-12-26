@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
+from scrapy.exporters import JsonItemExporter #Json数据的模块导入
 
 class MyScrapyPipeline(object):
+
+    def open_spider(self,spider):
+        self.file=open('rednet.json','wb')
+        self.writer=JsonItemExporter(self.file)
+        self.writer.start_exporting()
+
+    def close_spider(self,spider):
+        self.writer.finish_exporting()
+        self.file.close()
+
     def process_item(self, item, spider):
-        print("!"*50)
+
+        print("==========启动管道")
+        self.writer.export_item(item)
         return item
+ 
