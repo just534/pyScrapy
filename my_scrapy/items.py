@@ -12,3 +12,13 @@ class MyScrapyItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+class SpiderDetailItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title=scrapy.Field()
+    money=scrapy.Field()
+    price=scrapy.Field()
+    detail=scrapy.Field()
+    area=scrapy.Field()
+    towards=scrapy.Field()

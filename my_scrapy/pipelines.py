@@ -4,7 +4,7 @@ from scrapy.exporters import JsonItemExporter #Json数据的模块导入
 class MyScrapyPipeline(object):
 
     def open_spider(self,spider):
-        self.file=open('rednet.json','wb')
+        self.file=open('sxew.json','wb')
         self.writer=JsonItemExporter(self.file)
         self.writer.start_exporting()
 
@@ -17,4 +17,9 @@ class MyScrapyPipeline(object):
         print("==========启动管道")
         self.writer.export_item(item)
         return item
- 
+
+#
+# class MyScrapyPipeline(object):
+#     def process_item(self, item, spider):
+#         print(item)
+#         return

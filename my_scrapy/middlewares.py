@@ -13,7 +13,7 @@ class UserAgentMiddleware(object):
     #     print(request.headers['USER-AGENT'])
     #     return response
 
-class ProxyMiddleware(object):设置代理中间件
-    def process_request(self,request,spider):
-        proxy={"http://192.168.0.1:8000"}
-        request.meta['proxy']=proxy
+# class ProxyMiddleware(object):
+#     def process_request(self,request,spider):
+#         proxy={"http://192.168.0.1:8000"}
+#         request.meta['proxy']=proxy
